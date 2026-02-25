@@ -378,33 +378,33 @@ if st.session_state.extracted_text:
                 try:
                     summary = generate_summary(st.session_state.extracted_text)
                         
-                        st.success("✅ Summary generated successfully!")
-                        
-                        # Executive Summary
-                        st.markdown("#### 📋 Executive Summary")
-                        st.info(summary['executive_summary'])
-                        
-                        # Key Clauses
-                        st.markdown("#### 📑 Key Clauses")
-                        for clause in summary['key_clauses']:
-                            st.write(f"• {clause}")
-                        
-                        st.divider()
-                        
-                        # Risk Analysis
-                        st.markdown("#### ⚠️ Risk Analysis")
-                        risk_data = summary['risk_analysis']
-                        
-                        risk_class = f"risk-{risk_data['risk_level'].lower()}"
-                        st.markdown(f"**Overall Risk Level:** <span class='{risk_class}'>{risk_data['risk_level']}</span>", unsafe_allow_html=True)
-                        
-                        st.markdown("**🚩 Risk Flags:**")
-                        for flag in risk_data['risk_flags']:
-                            st.warning(flag)
-                        
-                        # Download option
-                        st.divider()
-                        summary_text = f"""# Document Summary
+                    st.success("✅ Summary generated successfully!")
+                    
+                    # Executive Summary
+                    st.markdown("#### 📋 Executive Summary")
+                    st.info(summary['executive_summary'])
+                    
+                    # Key Clauses
+                    st.markdown("#### 📑 Key Clauses")
+                    for clause in summary['key_clauses']:
+                        st.write(f"• {clause}")
+                    
+                    st.divider()
+                    
+                    # Risk Analysis
+                    st.markdown("#### ⚠️ Risk Analysis")
+                    risk_data = summary['risk_analysis']
+                    
+                    risk_class = f"risk-{risk_data['risk_level'].lower()}"
+                    st.markdown(f"**Overall Risk Level:** <span class='{risk_class}'>{risk_data['risk_level']}</span>", unsafe_allow_html=True)
+                    
+                    st.markdown("**🚩 Risk Flags:**")
+                    for flag in risk_data['risk_flags']:
+                        st.warning(flag)
+                    
+                    # Download option
+                    st.divider()
+                    summary_text = f"""# Document Summary
 
 ## Executive Summary
 {summary['executive_summary']}
