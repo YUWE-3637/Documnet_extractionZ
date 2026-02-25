@@ -351,7 +351,7 @@ Use the following tools for every response:
                 ),
             }
         ],
-        max_tokens=500,
+        max_tokens=800,
     )
     return {
         "summary": final_response.choices[0].message.content,
