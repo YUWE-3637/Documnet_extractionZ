@@ -7,6 +7,10 @@ import base64
 from openai import OpenAI
 import pdfplumber
 from pdf2image import convert_from_bytes
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
