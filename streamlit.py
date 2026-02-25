@@ -418,12 +418,12 @@ if st.session_state.extracted_text:
 **Risk Flags:**
 {chr(10).join(['- ' + flag for flag in risk_data['risk_flags']])}
 """
-                        st.download_button(
-                            label="📥 Download Summary",
-                            data=summary_text,
-                            file_name=f"summary_{st.session_state.document_filename}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md",
-                            mime="text/markdown"
-                        )
+                    st.download_button(
+                        label="📥 Download Summary",
+                        data=summary_text,
+                        file_name=f"summary_{st.session_state.document_filename}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md",
+                        mime="text/markdown"
+                    )
                 except Exception as e:
                     st.error(f"❌ Error: {str(e)}")
     
